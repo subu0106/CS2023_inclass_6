@@ -80,11 +80,18 @@ public:
         }
 
         cout << "Stack elements are : ";
+        vector<int> elements; // store elements in a vector
         Node *current = top;
         while (current != NULL)
         {
-            cout << current->data << " ";
+            elements.push_back(current->data);
             current = current->next;
+        }
+
+        // iterate over the elements in reverse order and print them
+        for (auto it = elements.rbegin(); it != elements.rend(); ++it)
+        {
+            cout << *it << " ";
         }
         cout << endl;
     }
